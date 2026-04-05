@@ -1,30 +1,12 @@
+
 <!DOCTYPE html>
+
 <html>
-<head>
-    <title>PROBATECH SYSTEM</title>
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
-    </style>
-</head>
-<body>
-    <iframe id="gas-app" src=""></iframe>
-
-    <script>
-        // 2. ระบุลิงก์ .exec (Google Script) ของคุณที่นี่
-        const GAS_URL = "https://script.google.com/macros/s/AKfycbxaNJWY7L2NkWtC-UTFiG69yCYBnwidIqx9fDViuJuHNaLa6GBlqpj1cEkiKvo9axxyhg/exec";
-
-        // 3. ฟังก์ชันดึงพารามิเตอร์จาก URL ปัจจุบัน (GitHub) มาต่อท้าย GAS_URL
-        function forwardParams() {
-            const currentUrlParams = window.location.search; // จะได้ค่าเช่น ?action=acknowledge&...
-            const iframe = document.getElementById('gas-app');
-            
-            // ส่งต่อพารามิเตอร์เข้าไปใน iframe src
-            iframe.src = GAS_URL + currentUrlParams;
-        }
-
-        // รันฟังก์ชันทันทีที่โหลดหน้าเว็บ
-        window.onload = forwardParams;
-    </script>
-</body>
+   <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      <base target="_top">
+   </head>
+   <body>
+      <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://script.google.com/macros/s/AKfycbxaNJWY7L2NkWtC-UTFiG69yCYBnwidIqx9fDViuJuHNaLa6GBlqpj1cEkiKvo9axxyhg/exec"></iframe>
+   </body>
 </html>
