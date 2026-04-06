@@ -1,12 +1,45 @@
-
 <!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR-PROBATECH</title>
+    <style>
+        /* ลบขอบและทำให้ Iframe เต็มจอ 100% พื้นหลังสีเดียวกับระบบ */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #0b0e1a; 
+        }
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
+    </style>
+</head>
+<body>
 
-<html>
-   <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-      <base target="_top">
-   </head>
-   <body>
-      <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;" src="https://script.google.com/macros/s/AKfycbxaNJWY7L2NkWtC-UTFiG69yCYBnwidIqx9fDViuJuHNaLa6GBlqpj1cEkiKvo9axxyhg/exec"></iframe>
-   </body>
+    <script>
+        // 1. ระบุลิงก์ .exec ของคุณ (อย่าเพิ่งใส่เครื่องหมาย ? หรือ & ใดๆ)
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbxaNJWY7L2NkWtC-UTFiG69yCYBnwidIqx9fDViuJuHNaLa6GBlqpj1cEkiKvo9axxyhg/exec";
+
+        // 2. ดึงพารามิเตอร์ทั้งหมดที่ติดมากับลิงก์ GitHub (เช่น ?action=acknowledge&empId=xxx)
+        const urlParams = window.location.search;
+
+        // 3. นำลิงก์หลักมาต่อด้วยพารามิเตอร์
+        const finalUrl = GAS_URL + urlParams;
+
+        // 4. สร้าง Iframe ด้วย JavaScript แล้วกำหนด src ที่สมบูรณ์แล้วเข้าไป
+        const iframe = document.createElement('iframe');
+        iframe.src = finalUrl;
+        iframe.setAttribute('allowfullscreen', 'true');
+
+        // 5. นำ Iframe ไปแสดงบนหน้าจอ
+        document.body.appendChild(iframe);
+    </script>
+
+</body>
 </html>
